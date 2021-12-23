@@ -29,7 +29,9 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,z
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,z
-      - /var/log/hybris:/var/log/hybris/:ro,z
+      # path to hybris log files. For example:
+      # - /opt/hybris/log/tomcat/:/var/log/hybris/:ro,z
+      - <CHANGE_ME>:/var/log/hybris/:ro,z
     ports:
       - "5044:5044"
       - "5000:5000/tcp"
